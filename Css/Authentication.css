@@ -1,11 +1,30 @@
 .container{
-    width:1000px;
+    /*position: relative;*/
+    width: 1000px;
 }
 
-.login{
-
+.login-form{
+    /*background-color:pink;*/
+    height:50%;
+    float:left;
+    padding-top:10%;
 }
 
 .signup{
+    height:50%;
+    float:right;
+    padding-top:10%;}
 
+.separator{
+    height: 100%;
+    width: 1px;
+    background: black;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+}
+
+.clearfix {
+    clear: both;
 }
