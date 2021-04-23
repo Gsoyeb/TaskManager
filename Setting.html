@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- CSS Setting.css connection -->
+    <link rel="stylesheet" href="Css/Setting.css">
+
+    <!-- Javascript Setting.js connection-->
+    <script src="Js/Setting.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <table class="table align-middle">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td id="setName"></td>
+                    <td>
+                        <input type="button" class="btn btn-primary btn-block" value="edit" onclick="editName()">
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td>Surname</td>
+                <td id="setSurname"></td>
+                <td>
+                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                </td>
+            </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td>Gender</td>
+                <td id="setGender"></td>
+                <td>
+                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                </td>
+            </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td>Age</td>
+                <td id="setAge"></td>
+                <td>
+                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                </td>
+            </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td>Email</td>
+                <td id="setEmail"></td>
+                <td>
+                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                </td>
+            </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td>Password</td>
+                <td id="setPassword" class="hidden"></td>
+                <td>
+                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+    <script>
+        document.getElementById("setName").appendChild(document.createTextNode(localStorage.getItem("name")));
+        document.getElementById("setSurname").appendChild(document.createTextNode(localStorage.getItem("surname")));
+        document.getElementById("setGender").appendChild(document.createTextNode(localStorage.getItem("gender")));
+        document.getElementById("setAge").appendChild(document.createTextNode(localStorage.getItem("age")));
+        document.getElementById("setEmail").appendChild(document.createTextNode(localStorage.getItem("email")));
+        document.getElementById("setPassword").appendChild(document.createTextNode(localStorage.getItem("registerPassword")));
+
+    </script>
+</html>
