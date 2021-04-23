@@ -18,6 +18,11 @@
     <!-- Javascript Setting.js connection-->
     <script src="Js/Setting.js"></script>
 
+    <!-- Bootstrap Modular for password check -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+
 </head>
 <body>
     <div class="container">
@@ -37,7 +42,7 @@
                 <td>Surname</td>
                 <td id="setSurname"></td>
                 <td>
-                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                    <input type="button" class="btn btn-primary btn-block" value="edit" onclick="editSurname()">
                 </td>
             </tr>
             </tbody>
@@ -47,7 +52,7 @@
                 <td>Gender</td>
                 <td id="setGender"></td>
                 <td>
-                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                    <input type="button" class="btn btn-primary btn-block" value="edit" onclick="editGender()">
                 </td>
             </tr>
             </tbody>
@@ -57,7 +62,7 @@
                 <td>Age</td>
                 <td id="setAge"></td>
                 <td>
-                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                    <input type="button" class="btn btn-primary btn-block" value="edit" onclick="editAge()">
                 </td>
             </tr>
             </tbody>
@@ -67,7 +72,7 @@
                 <td>Email</td>
                 <td id="setEmail"></td>
                 <td>
-                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                    <input type="button" class="btn btn-primary btn-block" value="edit" onclick="editEmail()">
                 </td>
             </tr>
             </tbody>
@@ -77,13 +82,41 @@
                 <td>Password</td>
                 <td id="setPassword" class="hidden"></td>
                 <td>
-                    <input type="button" class="btn btn-primary btn-block" value="edit">
+                    <input type="button" class="btn btn-primary btn-block" value="edit" onclick="editPassword()">
                 </td>
             </tr>
             </tbody>
 
         </table>
     </div>
+
+    <!-- Verification -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header"> <!-- Header -->
+                    <h5 class="modal-title" id="loginModalLabel">Login to Forms</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="loginForm"> <!-- Body. form with an ID so we can identify it, now includes both the textbox and the button within it -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="modalpass" class="col-form-label">Password:</label>
+                            <input type="password" name="modalpass" class="form-control" id="modalpass">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">  <!-- Footer -->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelModal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
     <script>
         document.getElementById("setName").appendChild(document.createTextNode(localStorage.getItem("name")));
@@ -92,6 +125,5 @@
         document.getElementById("setAge").appendChild(document.createTextNode(localStorage.getItem("age")));
         document.getElementById("setEmail").appendChild(document.createTextNode(localStorage.getItem("email")));
         document.getElementById("setPassword").appendChild(document.createTextNode(localStorage.getItem("registerPassword")));
-
     </script>
 </html>

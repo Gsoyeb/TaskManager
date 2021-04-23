@@ -1,17 +1,17 @@
 function signUp(){
-    var name = document.getElementById('name')
-    var surname = document.getElementById('surname')
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
 
     if(document.getElementById('male').checked){
         var gender = "Male";
     }else{
         var gender = "Female";
     }
-    var age = document.getElementById('selectAge')
+    var age = document.getElementById('selectAge');
 
-    var email = document.getElementById('email')
-    var password = document.getElementById('registerPassword')
-    var cPassword = document.getElementById('registerConfirmPassword')
+    var email = document.getElementById('email');
+    var password = document.getElementById('registerPassword');
+    var cPassword = document.getElementById('registerConfirmPassword');
 
     if(password.value == cPassword.value){
         localStorage.setItem('name', name.value);
